@@ -1,0 +1,68 @@
+{
+  "url": "https://pweb-mysql.vercel.app",
+  "deployment_checks_passed": 12,
+  "database_online": "activation deferred by user; 503 is expected for database directories",
+  "local_database_verification": "75 HTTP/database checks passed against MySQL/MariaDB and real MongoDB",
+  "checks": [
+    {
+      "path": "/",
+      "status": 200,
+      "expected": 200
+    },
+    {
+      "path": "/blog",
+      "status": 200,
+      "expected": 200
+    },
+    {
+      "path": "/spesifikasi",
+      "status": 200,
+      "expected": 200
+    },
+    {
+      "path": "/perbandingan",
+      "status": 200,
+      "expected": 200
+    },
+    {
+      "path": "/rdbms/new",
+      "status": 200,
+      "expected": 200
+    },
+    {
+      "path": "/mongodb/new",
+      "status": 200,
+      "expected": 200
+    },
+    {
+      "path": "/assets/style.css",
+      "status": 200,
+      "expected": 200
+    },
+    {
+      "path": "/assets/app.js",
+      "status": 200,
+      "expected": 200
+    },
+    {
+      "path": "/assets/inter-latin.woff2",
+      "status": 200,
+      "expected": 200
+    },
+    {
+      "path": "/src/app.mjs",
+      "status": 404,
+      "expected": 404
+    },
+    {
+      "path": "/rdbms",
+      "status": 503,
+      "expected": 503
+    },
+    {
+      "path": "/mongodb",
+      "status": 503,
+      "expected": 503
+    }
+  ]
+}

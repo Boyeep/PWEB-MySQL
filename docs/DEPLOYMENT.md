@@ -2,6 +2,8 @@
 
 Kode aplikasi, artikel, spesifikasi proyek, dan aset disiapkan untuk project Vercel **pweb-mysql**. Domain utama: https://pweb-mysql.vercel.app.
 
+**Status saat ini: website dan dokumentasi dideploy; aktivasi database online ditunda.** CRUD lengkap tersedia pada konfigurasi lokal yang sudah diuji. Modul database pada hosting belum dapat menyimpan data sampai layanan database diaktifkan dan dihubungkan.
+
 ## Database lokal yang telah diuji
 
 - MySQL/MariaDB, database pweb_mysql_lab: CRUD tabel users dan calon_siswa.

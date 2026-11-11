@@ -8,6 +8,8 @@ Portal latihan database dari [tugas PWeb Fajar Baskoro](https://fajarbaskoro.blo
 - [HTML Blogger](docs/blogspot.html) · [Panduan Blogger](docs/BLOGSPOT.md)
 - [Spesifikasi proyek](docs/SPECIFICATION.md) · [Pemetaan tugas](docs/CHECKLIST.md)
 
+**Website dan artikel sudah dideploy. Aktivasi database online ditunda.** Seluruh CRUD sudah diuji dengan MySQL/MariaDB dan MongoDB lokal; halaman data online memerlukan koneksi database yang belum diaktifkan.
+
 ## Fitur
 
 - `/rdbms`: tabel users dengan name, email, age; tambah, cari, urut, paginasi, detail, edit, hapus.
