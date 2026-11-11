@@ -1,0 +1,23 @@
+{
+  "name": "pweb-mysql-dataruang",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Latihan database: CRUD pengguna RDBMS, MongoDB, pendaftaran siswa, dan spesifikasi proyek.",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "start": "node --env-file-if-exists=.env server.mjs",
+    "test": "node --env-file-if-exists=.env --test tests/app.test.mjs",
+    "test:services": "node tests/start-mongo.mjs"
+  },
+  "dependencies": {
+    "mongodb": "7.8.0",
+    "mysql2": "3.24.6",
+    "pg": "8.23.1"
+  },
+  "devDependencies": {
+    "mongodb-memory-server-core": "11.3.0"
+  }
+}

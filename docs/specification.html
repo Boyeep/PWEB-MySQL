@@ -1,0 +1,198 @@
+<article lang="id" style="font-family:Arial,sans-serif;font-size:16px;line-height:1.9;color:#49566c;max-width:900px;margin:0 auto;padding:28px 22px;overflow-wrap:anywhere">
+<h1 style="font-size:29px;line-height:1.4;margin:0 0 24px;color:#304370">Spesifikasi Proyek Website: Cakrawala PPDB</h1>
+<p style="margin:0 0 18px;line-height:1.9;color:#49566c">Status: usulan pengembangan aplikasi sekolah dari prototipe CRUD DataRuang. Login, unggah berkas, seleksi, dan pembayaran di bawah adalah rencana; belum diaktifkan pada demo.</p>
+<h2 style="font-size:23px;line-height:1.5;margin:32px 0 14px;color:#3f5481">1. Nama dan deskripsi</h2>
+<p style="margin:0 0 18px;line-height:1.9;color:#49566c"><strong>Cakrawala PPDB</strong> merupakan website penerimaan peserta didik baru untuk sekolah fiktif SMK Cakrawala. Calon siswa mengisi formulir dan mengirim dokumen, sedangkan petugas memeriksa kelengkapan data, mencatat hasil verifikasi, dan menyampaikan status pendaftaran.</p>
+<p style="margin:0 0 18px;line-height:1.9;color:#49566c">DataRuang menjadi prototipe pembelajaran pengelolaan data: pengguna pada RDBMS, profil fleksibel pada MongoDB, dan CRUD calon siswa. Prototipe memisahkan data per ruang demo; prototipe tidak membuat keputusan penerimaan atau memproses pembayaran nyata.</p>
+<h2 style="font-size:23px;line-height:1.5;margin:32px 0 14px;color:#3f5481">2. Tujuan</h2>
+<ul style="padding-left:24px;line-height:1.9;color:#49566c;margin:15px 0 22px">
+<li>Mengurangi pencatatan formulir berulang dan data yang tidak konsisten.</li>
+<li>Menyediakan satu sumber status pendaftaran yang dapat dilacak.</li>
+<li>Memisahkan tugas calon siswa, verifikator, dan administrator.</li>
+<li>Memperlihatkan alasan pemilihan database berdasarkan hubungan dan bentuk data.</li>
+</ul>
+<h2 style="font-size:23px;line-height:1.5;margin:32px 0 14px;color:#3f5481">3. Pengguna dan hak akses yang direncanakan</h2>
+<table style="width:100%;border-collapse:collapse;font-size:14px;line-height:1.8;margin:20px 0">
+<thead>
+<tr>
+<th style="padding:12px;text-align:left;border:1px solid #dfe5f2;background:#f3f5fb;color:#4d6088">Peran</th>
+<th style="padding:12px;text-align:left;border:1px solid #dfe5f2;background:#f3f5fb;color:#4d6088">Hak akses</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="padding:12px;text-align:left;vertical-align:top;border:1px solid #dfe5f2;color:#53627c">Calon siswa</td>
+<td style="padding:12px;text-align:left;vertical-align:top;border:1px solid #dfe5f2;color:#53627c">Mengisi dan mengubah draft sendiri; mengunggah berkas; melihat status sendiri</td>
+</tr>
+<tr>
+<td style="padding:12px;text-align:left;vertical-align:top;border:1px solid #dfe5f2;color:#53627c">Verifikator</td>
+<td style="padding:12px;text-align:left;vertical-align:top;border:1px solid #dfe5f2;color:#53627c">Memeriksa berkas; meminta perbaikan; mencatat hasil verifikasi</td>
+</tr>
+<tr>
+<td style="padding:12px;text-align:left;vertical-align:top;border:1px solid #dfe5f2;color:#53627c">Administrator</td>
+<td style="padding:12px;text-align:left;vertical-align:top;border:1px solid #dfe5f2;color:#53627c">Mengelola periode, program studi, akun petugas, dan laporan</td>
+</tr>
+</tbody>
+</table>
+<h2 style="font-size:23px;line-height:1.5;margin:32px 0 14px;color:#3f5481">4. Fitur front end</h2>
+<ol style="padding-left:24px;line-height:1.9;color:#49566c;margin:15px 0 22px">
+<li>Beranda: profil singkat sekolah, informasi periode, persyaratan, dan alur pendaftaran.</li>
+<li>Registrasi dan login: formulir akun, pemulihan akses, dan informasi kesalahan yang jelas.</li>
+<li>Formulir pendaftaran: data diri, sekolah asal, pilihan program, dan ringkasan sebelum kirim.</li>
+<li>Unggah dokumen: daftar persyaratan, batas ukuran, format file, dan status kelengkapan.</li>
+<li>Dashboard calon siswa: nomor pendaftaran, status, catatan revisi, dan riwayat perubahan.</li>
+<li>Dashboard petugas: pencarian, filter periode/status, detail pendaftar, dan pencatatan verifikasi.</li>
+<li>Tampilan responsif, navigasi keyboard, label formulir, kontras teks, serta pesan proses dan hasil.</li>
+</ol>
+<h2 style="font-size:23px;line-height:1.5;margin:32px 0 14px;color:#3f5481">5. Fitur back end dan pengelolaan data</h2>
+<p style="margin:0 0 18px;line-height:1.9;color:#49566c">RDBMS MySQL menjadi sumber utama untuk data yang memerlukan relasi: akun, periode, program keahlian, pendaftaran, dokumen, status verifikasi, pembayaran, dan audit log. Gunakan primary key, foreign key, unique constraint, dan transaksi untuk perubahan yang saling bergantung.</p>
+<p style="margin:0 0 18px;line-height:1.9;color:#49566c">MongoDB dapat dipakai untuk profil tambahan atau preferensi dengan bentuk yang berubah. Kebutuhan ini tidak mengharuskan sekolah memakai dua database; pada sistem operasional kecil, MySQL saja dapat lebih sederhana. Modul MongoDB pada DataRuang dibuat untuk memenuhi latihan dan membandingkan model data.</p>
+<p style="margin:0 0 18px;line-height:1.9;color:#49566c">Tabel yang direncanakan:</p>
+<table style="width:100%;border-collapse:collapse;font-size:14px;line-height:1.8;margin:20px 0">
+<thead>
+<tr>
+<th style="padding:12px;text-align:left;border:1px solid #dfe5f2;background:#f3f5fb;color:#4d6088">Tabel</th>
+<th style="padding:12px;text-align:left;border:1px solid #dfe5f2;background:#f3f5fb;color:#4d6088">Kolom utama dan relasi</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="padding:12px;text-align:left;vertical-align:top;border:1px solid #dfe5f2;color:#53627c">accounts</td>
+<td style="padding:12px;text-align:left;vertical-align:top;border:1px solid #dfe5f2;color:#53627c">id, name, email unik, password_hash, role, is_active</td>
+</tr>
+<tr>
+<td style="padding:12px;text-align:left;vertical-align:top;border:1px solid #dfe5f2;color:#53627c">admission_periods</td>
+<td style="padding:12px;text-align:left;vertical-align:top;border:1px solid #dfe5f2;color:#53627c">id, name, opens_at, closes_at, status</td>
+</tr>
+<tr>
+<td style="padding:12px;text-align:left;vertical-align:top;border:1px solid #dfe5f2;color:#53627c">programs</td>
+<td style="padding:12px;text-align:left;vertical-align:top;border:1px solid #dfe5f2;color:#53627c">id, code unik, name, capacity</td>
+</tr>
+<tr>
+<td style="padding:12px;text-align:left;vertical-align:top;border:1px solid #dfe5f2;color:#53627c">applications</td>
+<td style="padding:12px;text-align:left;vertical-align:top;border:1px solid #dfe5f2;color:#53627c">id, applicant_id → accounts, period_id → admission_periods, program_id → programs, registration_number unik, status</td>
+</tr>
+<tr>
+<td style="padding:12px;text-align:left;vertical-align:top;border:1px solid #dfe5f2;color:#53627c">applicant_profiles</td>
+<td style="padding:12px;text-align:left;vertical-align:top;border:1px solid #dfe5f2;color:#53627c">application_id → applications, nama, alamat, jenis_kelamin, agama, sekolah_asal</td>
+</tr>
+<tr>
+<td style="padding:12px;text-align:left;vertical-align:top;border:1px solid #dfe5f2;color:#53627c">documents</td>
+<td style="padding:12px;text-align:left;vertical-align:top;border:1px solid #dfe5f2;color:#53627c">id, application_id → applications, document_type, storage_key, verification_status</td>
+</tr>
+<tr>
+<td style="padding:12px;text-align:left;vertical-align:top;border:1px solid #dfe5f2;color:#53627c">status_history</td>
+<td style="padding:12px;text-align:left;vertical-align:top;border:1px solid #dfe5f2;color:#53627c">id, application_id → applications, actor_id → accounts, old_status, new_status, reason, created_at</td>
+</tr>
+<tr>
+<td style="padding:12px;text-align:left;vertical-align:top;border:1px solid #dfe5f2;color:#53627c">payments</td>
+<td style="padding:12px;text-align:left;vertical-align:top;border:1px solid #dfe5f2;color:#53627c">id, application_id → applications, provider_order_id unik, amount, status, paid_at</td>
+</tr>
+</tbody>
+</table>
+<p style="margin:0 0 18px;line-height:1.9;color:#49566c">Pada prototipe saat ini, tabel nyata yang sudah dibuat adalah workspaces, users, dan calon_siswa. Collection MongoDB nyata adalah users dan workspaces. Tabel usulan di atas belum merupakan migrasi produksi.</p>
+<h2 style="font-size:23px;line-height:1.5;margin:32px 0 14px;color:#3f5481">6. Logika bisnis</h2>
+<ul style="padding-left:24px;line-height:1.9;color:#49566c;margin:15px 0 22px">
+<li>Pendaftaran hanya dapat dikirim selama periode terbuka.</li>
+<li>Satu akun hanya boleh memiliki satu pendaftaran aktif untuk periode yang sama.</li>
+<li>Draft dapat diubah calon siswa. Data terkirim hanya dapat diubah setelah petugas meminta revisi.</li>
+<li>Perubahan status harus mengikuti urutan yang diizinkan: draft → submitted → under_review → needs_revision atau verified. Hasil akhir diterbitkan oleh petugas berwenang.</li>
+<li>Kelengkapan data dan pembayaran tidak otomatis menentukan penerimaan siswa.</li>
+<li>Setiap perubahan status mencatat pelaku, waktu, dan alasan.</li>
+<li>Penghapusan draft memerlukan konfirmasi. Data yang sudah menjadi arsip mengikuti kebijakan retensi sekolah.</li>
+</ul>
+<h2 style="font-size:23px;line-height:1.5;margin:32px 0 14px;color:#3f5481">7. Autentikasi dan security</h2>
+<p style="margin:0 0 18px;line-height:1.9;color:#49566c">Rencana sistem akun: hashing password dengan algoritma yang sesuai, cookie sesi HttpOnly/Secure/SameSite, regenerasi sesi setelah login, kedaluwarsa sesi, otorisasi per peran, CSRF pada perubahan data, rate limit login, serta audit log tindakan petugas. Keputusan akses harus diperiksa di server pada setiap request.</p>
+<p style="margin:0 0 18px;line-height:1.9;color:#49566c">Query SQL memakai parameter terpisah; filter MongoDB dibentuk server tanpa menerima operator dari input pengguna. Teks yang ditampilkan di HTML di-escape. Rahasia koneksi database dan payment gateway berada pada environment hosting.</p>
+<p style="margin:0 0 18px;line-height:1.9;color:#49566c">Unggah berkas harus dibatasi ukuran/tipe, diperiksa kontennya, menggunakan nama acak, dan disimpan privat di luar folder publik. Pengunduhan memerlukan pemeriksaan hak akses. Backup dan uji pemulihan diperlukan sebelum pemakaian operasional.</p>
+<p style="margin:0 0 18px;line-height:1.9;color:#49566c">Yang sudah ada di prototipe: cookie ruang demo yang ditandatangani HMAC, token CSRF, pembatasan semua query berdasarkan workspace, validasi server, query SQL berparameter, unique index email per workspace, escaping HTML, pembatasan JSON tambahan, dan konfirmasi hapus melalui POST. Cookie ruang demo bukan pengganti autentikasi akun petugas.</p>
+<h2 style="font-size:23px;line-height:1.5;margin:32px 0 14px;color:#3f5481">8. API dan rencana integrasi</h2>
+<p style="margin:0 0 18px;line-height:1.9;color:#49566c">API yang sudah tersedia pada prototipe: <code>GET /api/summary</code>, yang mengembalikan jumlah data ruang demo saat ini serta nama engine yang digunakan. Endpoint ini tidak mengembalikan kredensial atau data pengunjung lain.</p>
+<p style="margin:0 0 18px;line-height:1.9;color:#49566c">API sistem operasional yang direncanakan:</p>
+<table style="width:100%;border-collapse:collapse;font-size:14px;line-height:1.8;margin:20px 0">
+<thead>
+<tr>
+<th style="padding:12px;text-align:left;border:1px solid #dfe5f2;background:#f3f5fb;color:#4d6088">Method dan endpoint</th>
+<th style="padding:12px;text-align:left;border:1px solid #dfe5f2;background:#f3f5fb;color:#4d6088">Tujuan</th>
+<th style="padding:12px;text-align:left;border:1px solid #dfe5f2;background:#f3f5fb;color:#4d6088">Akses</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="padding:12px;text-align:left;vertical-align:top;border:1px solid #dfe5f2;color:#53627c">POST /api/auth/login</td>
+<td style="padding:12px;text-align:left;vertical-align:top;border:1px solid #dfe5f2;color:#53627c">Membuat sesi akun</td>
+<td style="padding:12px;text-align:left;vertical-align:top;border:1px solid #dfe5f2;color:#53627c">Publik dengan rate limit</td>
+</tr>
+<tr>
+<td style="padding:12px;text-align:left;vertical-align:top;border:1px solid #dfe5f2;color:#53627c">POST /api/applications</td>
+<td style="padding:12px;text-align:left;vertical-align:top;border:1px solid #dfe5f2;color:#53627c">Membuat draft</td>
+<td style="padding:12px;text-align:left;vertical-align:top;border:1px solid #dfe5f2;color:#53627c">Calon siswa</td>
+</tr>
+<tr>
+<td style="padding:12px;text-align:left;vertical-align:top;border:1px solid #dfe5f2;color:#53627c">PATCH /api/applications/:id</td>
+<td style="padding:12px;text-align:left;vertical-align:top;border:1px solid #dfe5f2;color:#53627c">Mengubah draft sendiri</td>
+<td style="padding:12px;text-align:left;vertical-align:top;border:1px solid #dfe5f2;color:#53627c">Pemilik draft</td>
+</tr>
+<tr>
+<td style="padding:12px;text-align:left;vertical-align:top;border:1px solid #dfe5f2;color:#53627c">POST /api/applications/:id/submit</td>
+<td style="padding:12px;text-align:left;vertical-align:top;border:1px solid #dfe5f2;color:#53627c">Mengirim untuk diperiksa</td>
+<td style="padding:12px;text-align:left;vertical-align:top;border:1px solid #dfe5f2;color:#53627c">Pemilik draft</td>
+</tr>
+<tr>
+<td style="padding:12px;text-align:left;vertical-align:top;border:1px solid #dfe5f2;color:#53627c">POST /api/applications/:id/review</td>
+<td style="padding:12px;text-align:left;vertical-align:top;border:1px solid #dfe5f2;color:#53627c">Mencatat hasil pemeriksaan</td>
+<td style="padding:12px;text-align:left;vertical-align:top;border:1px solid #dfe5f2;color:#53627c">Verifikator</td>
+</tr>
+<tr>
+<td style="padding:12px;text-align:left;vertical-align:top;border:1px solid #dfe5f2;color:#53627c">POST /api/payments/checkout</td>
+<td style="padding:12px;text-align:left;vertical-align:top;border:1px solid #dfe5f2;color:#53627c">Meminta token checkout</td>
+<td style="padding:12px;text-align:left;vertical-align:top;border:1px solid #dfe5f2;color:#53627c">Pemilik pendaftaran</td>
+</tr>
+<tr>
+<td style="padding:12px;text-align:left;vertical-align:top;border:1px solid #dfe5f2;color:#53627c">POST /api/payments/webhook</td>
+<td style="padding:12px;text-align:left;vertical-align:top;border:1px solid #dfe5f2;color:#53627c">Menerima notifikasi gateway</td>
+<td style="padding:12px;text-align:left;vertical-align:top;border:1px solid #dfe5f2;color:#53627c">Verifikasi signature server</td>
+</tr>
+</tbody>
+</table>
+<p style="margin:0 0 18px;line-height:1.9;color:#49566c">Payment gateway, misalnya Midtrans, hanya direncanakan untuk sandbox terlebih dahulu. Nominal ditentukan server, bukan browser. Webhook harus diverifikasi, jumlah dan order harus cocok, serta event berulang diproses secara idempoten. Redirect sukses pada browser tidak boleh langsung mengubah status menjadi lunas. Tidak ada pembayaran nyata pada demo DataRuang.</p>
+<h2 style="font-size:23px;line-height:1.5;margin:32px 0 14px;color:#3f5481">9. Rencana implementasi</h2>
+<table style="width:100%;border-collapse:collapse;font-size:14px;line-height:1.8;margin:20px 0">
+<thead>
+<tr>
+<th style="padding:12px;text-align:left;border:1px solid #dfe5f2;background:#f3f5fb;color:#4d6088">Tahap</th>
+<th style="padding:12px;text-align:left;border:1px solid #dfe5f2;background:#f3f5fb;color:#4d6088">Hasil</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="padding:12px;text-align:left;vertical-align:top;border:1px solid #dfe5f2;color:#53627c">Minggu 1</td>
+<td style="padding:12px;text-align:left;vertical-align:top;border:1px solid #dfe5f2;color:#53627c">Memastikan kebutuhan, peran, alur, wireframe, dan skema MySQL</td>
+</tr>
+<tr>
+<td style="padding:12px;text-align:left;vertical-align:top;border:1px solid #dfe5f2;color:#53627c">Minggu 2</td>
+<td style="padding:12px;text-align:left;vertical-align:top;border:1px solid #dfe5f2;color:#53627c">Akun dan otorisasi; formulir; CRUD pendaftaran; validasi dan pencarian</td>
+</tr>
+<tr>
+<td style="padding:12px;text-align:left;vertical-align:top;border:1px solid #dfe5f2;color:#53627c">Minggu 3</td>
+<td style="padding:12px;text-align:left;vertical-align:top;border:1px solid #dfe5f2;color:#53627c">Berkas privat; workflow verifikasi; histori dan laporan; sandbox API pembayaran jika dibutuhkan</td>
+</tr>
+<tr>
+<td style="padding:12px;text-align:left;vertical-align:top;border:1px solid #dfe5f2;color:#53627c">Minggu 4</td>
+<td style="padding:12px;text-align:left;vertical-align:top;border:1px solid #dfe5f2;color:#53627c">Pengujian alur, akses, transaksi, backup/pemulihan, aksesibilitas, deployment, dan dokumentasi</td>
+</tr>
+</tbody>
+</table>
+<p style="margin:0 0 18px;line-height:1.9;color:#49566c">Urutan merupakan estimasi rencana, bukan laporan pekerjaan yang sudah dilaksanakan. Payment gateway tidak menghalangi penyelesaian MVP jika sekolah tidak memerlukan biaya pendaftaran.</p>
+<h2 style="font-size:23px;line-height:1.5;margin:32px 0 14px;color:#3f5481">10. Kriteria penerimaan dan batasan</h2>
+<ul style="padding-left:24px;line-height:1.9;color:#49566c;margin:15px 0 22px">
+<li>Akun tidak dapat membaca atau mengubah pendaftaran milik akun lain.</li>
+<li>Request tidak valid tidak mengubah database.</li>
+<li>Email dan nomor pendaftaran yang seharusnya unik ditolak jika berulang.</li>
+<li>Form tambah, detail, edit, pencarian, dan hapus bekerja pada viewport 375–1440 piksel.</li>
+<li>Perubahan status yang tidak sesuai ditolak server dan tidak menulis histori yang menyesatkan.</li>
+<li>Notifikasi pembayaran duplikat tidak menghasilkan pencatatan ganda.</li>
+<li>Backup diuji dapat dipulihkan sebelum sistem digunakan untuk data nyata.</li>
+</ul>
+<p style="margin:0 0 18px;line-height:1.9;color:#49566c">Demo tidak mencakup keputusan seleksi, data identitas nyata, unggah berkas, akun petugas, notifikasi email, atau transaksi finansial. Seluruh nama dan email contoh bersifat fiktif.</p>
+</article>

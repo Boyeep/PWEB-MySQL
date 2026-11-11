@@ -1,0 +1,12 @@
+node_modules/
+.env*
+!.env.example
+.vercel/
+test-results/
+*.log
+*.zip
+*.tgz
+
+.vercel
+.env*
+!.env.example
