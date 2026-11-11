@@ -1,16 +1,16 @@
 # Belajar MySQL dan MongoDB lewat DataRuang: CRUD Pengguna, Pendaftaran Siswa, dan Spesifikasi Proyek
 
-Pada tugas Pemrograman Web kali ini, saya membuat **DataRuang**, portal latihan untuk memahami cara aplikasi menyimpan dan mengelola data. Materinya mengacu pada [PWeb — Penggunaan dan Pemilihan Database untuk Back End](https://fajarbaskoro.blogspot.com/2018/04/pweb-mysql.html) dari Fajar Baskoro.
+Saya membuat **DataRuang**, aplikasi untuk mengelola data pengguna dan pendaftaran siswa sekaligus memahami perbedaan penyimpanan relasional dan dokumen.
 
-Saya membagi tugas menjadi empat bagian: aplikasi pengguna dengan RDBMS, aplikasi pengguna dengan MongoDB, CRUD pendaftaran siswa baru, serta spesifikasi proyek website. Semua bagian tersedia dalam satu repository, dengan halaman dan modul penyimpanan yang terpisah.
+Proyek ini terdiri dari empat bagian: aplikasi pengguna dengan RDBMS, aplikasi pengguna dengan MongoDB, CRUD pendaftaran siswa baru, serta spesifikasi proyek website. Semua bagian tersedia dalam satu repository, dengan halaman dan modul penyimpanan yang terpisah.
 
 [Buka DataRuang](https://pweb-mysql.vercel.app) · [Source code PWEB-MySQL](https://github.com/Boyeep/PWEB-MySQL) · [Spesifikasi proyek](https://github.com/Boyeep/PWEB-MySQL/blob/main/docs/SPECIFICATION.md)
 
 ## 1. Memilih Database dari Kebutuhan Data
 
-Pada latihan pengguna, data inti yang disimpan adalah **name, email, dan age**. Ketiganya dapat dimodelkan sebagai kolom dalam sebuah tabel. Nama dan email berupa teks, sedangkan usia berupa bilangan bulat. Struktur ini cocok untuk memperlihatkan cara kerja RDBMS.
+Pada modul pengguna RDBMS, data inti yang disimpan adalah **name, email, dan age**. Ketiganya dapat dimodelkan sebagai kolom dalam sebuah tabel. Nama dan email berupa teks, sedangkan usia berupa bilangan bulat. Struktur ini cocok untuk memperlihatkan cara kerja RDBMS.
 
-Pada latihan kedua, pengguna tetap memiliki data inti yang sama, tetapi profil tambahannya dapat berbeda. Satu pengguna mempunyai kota dan daftar minat, pengguna lain mempunyai pendidikan, keterampilan, atau tautan sosial. MongoDB menyimpan variasi tersebut sebagai bagian dari dokumen.
+Pada modul MongoDB, pengguna tetap memiliki data inti yang sama, tetapi profil tambahannya dapat berbeda. Satu pengguna mempunyai kota dan daftar minat, pengguna lain mempunyai pendidikan, keterampilan, atau tautan sosial. MongoDB menyimpan variasi tersebut sebagai bagian dari dokumen.
 
 Perbedaannya tidak berarti database relasional selalu kaku atau MongoDB tidak memiliki aturan. RDBMS dapat menyimpan JSON, dan MongoDB dapat menerapkan validasi skema maupun transaksi. Pilihan akhirnya bergantung pada relasi, pola akses, kebutuhan integritas, dan cara data berkembang.
 
@@ -120,7 +120,7 @@ Filter tetap dibentuk oleh server. Input pengguna tidak dapat langsung menjadi o
 
 ## 6. Studi Kasus Pendaftaran Siswa Baru
 
-Bagian pendaftaran siswa menggunakan tabel `calon_siswa`. Isian utamanya adalah nama, alamat, jenis kelamin, agama atau kepercayaan, serta sekolah asal. Saya mengikuti struktur data studi kasus yang ditautkan pada materi, lalu membuat antarmukanya konsisten dengan direktori pengguna.
+Bagian pendaftaran siswa menggunakan tabel `calon_siswa`. Isian utamanya adalah nama, alamat, jenis kelamin, agama atau kepercayaan, serta sekolah asal. Saya memisahkan data calon siswa ke tabel tersendiri dan membuat antarmukanya konsisten dengan direktori pengguna.
 
 Pengguna dapat menambahkan pendaftar, mencari nama atau sekolah, membuka detail, mengedit, serta menghapus setelah konfirmasi. Form yang gagal validasi mempertahankan isian sebelumnya dan menampilkan penjelasan di dekat kolom terkait.
 
@@ -170,11 +170,8 @@ Pada hosting serverless, layanan database perlu dapat dijangkau melalui jaringan
 
 Layout menyesuaikan layar kecil: navigasi memakai tombol menu, formulir menjadi satu kolom, dan tabel dapat digeser tanpa membuat seluruh halaman melebar. Source code, hasil pengujian, screenshot, dan artikel tersedia pada [repository PWEB-MySQL](https://github.com/Boyeep/PWEB-MySQL).
 
-## Referensi
+## Dokumentasi Teknologi
 
-- [Fajar Baskoro — Penggunaan dan Pemilihan Database untuk Back End](https://fajarbaskoro.blogspot.com/2018/04/pweb-mysql.html)
-- [Fajar Baskoro — CRUD Pendaftaran Siswa Baru](https://fajarbaskoro.blogspot.com/2022/11/crud-2-pendaftaran-siswa-baru.html)
-- [Fajar Baskoro — Spesifikasi Proyek Website](https://fajarbaskoro.blogspot.com/2025/09/spesifikasi-proyek-website.html)
-- [MySQL 8.4 Reference Manual — CREATE TABLE](https://dev.mysql.com/doc/refman/8.4/en/create-table.html)
-- [MongoDB Node.js Driver — Insert Documents](https://www.mongodb.com/docs/drivers/node/current/crud/insert/)
-- [MySQL2 — Prepared Statements](https://sidorares.github.io/node-mysql2/docs/documentation/prepared-statements)
+- [MySQL 8.4 Reference Manual: CREATE TABLE](https://dev.mysql.com/doc/refman/8.4/en/create-table.html)
+- [MongoDB Node.js Driver: Insert Documents](https://www.mongodb.com/docs/drivers/node/current/crud/insert/)
+- [MySQL2: Prepared Statements](https://sidorares.github.io/node-mysql2/docs/documentation/prepared-statements)

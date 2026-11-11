@@ -12,7 +12,7 @@ DataRuang menjadi prototipe pembelajaran pengelolaan data: pengguna pada RDBMS, 
 
 - Mengurangi pencatatan formulir berulang dan data yang tidak konsisten.
 - Menyediakan satu sumber status pendaftaran yang dapat dilacak.
-- Memisahkan tugas calon siswa, verifikator, dan administrator.
+- Memisahkan peran calon siswa, verifikator, dan administrator.
 - Memperlihatkan alasan pemilihan database berdasarkan hubungan dan bentuk data.
 
 ## 3. Pengguna dan hak akses yang direncanakan
@@ -37,7 +37,7 @@ DataRuang menjadi prototipe pembelajaran pengelolaan data: pengguna pada RDBMS, 
 
 RDBMS MySQL menjadi sumber utama untuk data yang memerlukan relasi: akun, periode, program keahlian, pendaftaran, dokumen, status verifikasi, pembayaran, dan audit log. Gunakan primary key, foreign key, unique constraint, dan transaksi untuk perubahan yang saling bergantung.
 
-MongoDB dapat dipakai untuk profil tambahan atau preferensi dengan bentuk yang berubah. Kebutuhan ini tidak mengharuskan sekolah memakai dua database; pada sistem operasional kecil, MySQL saja dapat lebih sederhana. Modul MongoDB pada DataRuang dibuat untuk memenuhi latihan dan membandingkan model data.
+MongoDB dapat dipakai untuk profil tambahan atau preferensi dengan bentuk yang berubah. Kebutuhan ini tidak mengharuskan sekolah memakai dua database; pada sistem operasional kecil, MySQL saja dapat lebih sederhana. Modul MongoDB pada DataRuang memperlihatkan pengelolaan profil fleksibel dan perbandingan model data.
 
 Tabel yang direncanakan:
 
@@ -108,7 +108,7 @@ Urutan merupakan estimasi rencana, bukan laporan pekerjaan yang sudah dilaksanak
 - Akun tidak dapat membaca atau mengubah pendaftaran milik akun lain.
 - Request tidak valid tidak mengubah database.
 - Email dan nomor pendaftaran yang seharusnya unik ditolak jika berulang.
-- Form tambah, detail, edit, pencarian, dan hapus bekerja pada viewport 375–1440 piksel.
+- Form tambah, detail, edit, pencarian, dan hapus bekerja pada viewport 375-1440 piksel.
 - Perubahan status yang tidak sesuai ditolak server dan tidak menulis histori yang menyesatkan.
 - Notifikasi pembayaran duplikat tidak menghasilkan pencatatan ganda.
 - Backup diuji dapat dipulihkan sebelum sistem digunakan untuk data nyata.

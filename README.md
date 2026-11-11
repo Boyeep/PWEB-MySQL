@@ -1,12 +1,12 @@
 # PWEB-MySQL · DataRuang
 
-Portal latihan database dari [tugas PWeb Fajar Baskoro](https://fajarbaskoro.blogspot.com/2018/04/pweb-mysql.html): CRUD pengguna RDBMS, CRUD pengguna MongoDB dengan profil fleksibel, pendaftaran siswa baru, dan spesifikasi proyek front end/back end.
+Aplikasi pengelolaan data dengan CRUD pengguna RDBMS, CRUD pengguna MongoDB dengan profil fleksibel, pendaftaran siswa baru, dan spesifikasi proyek front end/back end.
 
 - Repository: https://github.com/Boyeep/PWEB-MySQL
 - Hosting: https://pweb-mysql.vercel.app
 - Artikel: https://pweb-mysql.vercel.app/blog
 - [HTML Blogger](docs/blogspot.html) · [Panduan Blogger](docs/BLOGSPOT.md)
-- [Spesifikasi proyek](docs/SPECIFICATION.md) · [Pemetaan tugas](docs/CHECKLIST.md)
+- [Spesifikasi proyek](docs/SPECIFICATION.md) · [Daftar fitur](docs/CHECKLIST.md)
 
 **Website dan artikel sudah dideploy. Aktivasi database online ditunda.** Seluruh CRUD sudah diuji dengan MySQL/MariaDB dan MongoDB lokal; halaman data online memerlukan koneksi database yang belum diaktifkan.
 
@@ -51,7 +51,7 @@ Environment hosting: `APP_SECRET`, `SQL_DRIVER`, `MYSQL_HOST`, `MYSQL_PORT`, `MY
 
 ## Keamanan dan batasan
 
-Token CSRF diperiksa pada perubahan data. Semua query dan operasi dokumen membatasi workspace. Email unik per ruang. Usia harus bilangan bulat 1–120. Teks di-escape sebelum ditampilkan. JSON profil dibatasi ukuran/kedalaman dan menolak operator serta nama properti berbahaya. Cookie HttpOnly, SameSite=Lax, dan Secure pada Vercel.
+Token CSRF diperiksa pada perubahan data. Semua query dan operasi dokumen membatasi workspace. Email unik per ruang. Usia harus bilangan bulat 1-120. Teks di-escape sebelum ditampilkan. JSON profil dibatasi ukuran/kedalaman dan menolak operator serta nama properti berbahaya. Cookie HttpOnly, SameSite=Lax, dan Secure pada Vercel.
 
 Ruang demo maksimum 100 catatan per modul. Cookie berakhir setelah tujuh hari; dokumen MongoDB menggunakan TTL. MySQL menyimpan data demo sampai dibersihkan oleh pengelola. Jangan memakai prototipe ini untuk identitas siswa nyata.
 

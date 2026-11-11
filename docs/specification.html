@@ -8,7 +8,7 @@
 <ul style="padding-left:24px;line-height:1.9;color:#49566c;margin:15px 0 22px">
 <li>Mengurangi pencatatan formulir berulang dan data yang tidak konsisten.</li>
 <li>Menyediakan satu sumber status pendaftaran yang dapat dilacak.</li>
-<li>Memisahkan tugas calon siswa, verifikator, dan administrator.</li>
+<li>Memisahkan peran calon siswa, verifikator, dan administrator.</li>
 <li>Memperlihatkan alasan pemilihan database berdasarkan hubungan dan bentuk data.</li>
 </ul>
 <h2 style="font-size:23px;line-height:1.5;margin:32px 0 14px;color:#3f5481">3. Pengguna dan hak akses yang direncanakan</h2>
@@ -46,7 +46,7 @@
 </ol>
 <h2 style="font-size:23px;line-height:1.5;margin:32px 0 14px;color:#3f5481">5. Fitur back end dan pengelolaan data</h2>
 <p style="margin:0 0 18px;line-height:1.9;color:#49566c">RDBMS MySQL menjadi sumber utama untuk data yang memerlukan relasi: akun, periode, program keahlian, pendaftaran, dokumen, status verifikasi, pembayaran, dan audit log. Gunakan primary key, foreign key, unique constraint, dan transaksi untuk perubahan yang saling bergantung.</p>
-<p style="margin:0 0 18px;line-height:1.9;color:#49566c">MongoDB dapat dipakai untuk profil tambahan atau preferensi dengan bentuk yang berubah. Kebutuhan ini tidak mengharuskan sekolah memakai dua database; pada sistem operasional kecil, MySQL saja dapat lebih sederhana. Modul MongoDB pada DataRuang dibuat untuk memenuhi latihan dan membandingkan model data.</p>
+<p style="margin:0 0 18px;line-height:1.9;color:#49566c">MongoDB dapat dipakai untuk profil tambahan atau preferensi dengan bentuk yang berubah. Kebutuhan ini tidak mengharuskan sekolah memakai dua database; pada sistem operasional kecil, MySQL saja dapat lebih sederhana. Modul MongoDB pada DataRuang memperlihatkan pengelolaan profil fleksibel dan perbandingan model data.</p>
 <p style="margin:0 0 18px;line-height:1.9;color:#49566c">Tabel yang direncanakan:</p>
 <table style="width:100%;border-collapse:collapse;font-size:14px;line-height:1.8;margin:20px 0">
 <thead>
@@ -189,7 +189,7 @@
 <li>Akun tidak dapat membaca atau mengubah pendaftaran milik akun lain.</li>
 <li>Request tidak valid tidak mengubah database.</li>
 <li>Email dan nomor pendaftaran yang seharusnya unik ditolak jika berulang.</li>
-<li>Form tambah, detail, edit, pencarian, dan hapus bekerja pada viewport 375–1440 piksel.</li>
+<li>Form tambah, detail, edit, pencarian, dan hapus bekerja pada viewport 375-1440 piksel.</li>
 <li>Perubahan status yang tidak sesuai ditolak server dan tidak menulis histori yang menyesatkan.</li>
 <li>Notifikasi pembayaran duplikat tidak menghasilkan pencatatan ganda.</li>
 <li>Backup diuji dapat dipulihkan sebelum sistem digunakan untuk data nyata.</li>

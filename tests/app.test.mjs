@@ -70,7 +70,7 @@ test("DataRuang against real configured SQL and MongoDB servers", async (t) => {
       "Home renders both real database connections",
       home.status === 200 &&
         !home.body.includes("Belum terhubung") &&
-        !home.body.includes("<strong>—</strong>"),
+        !home.body.includes("<strong>-</strong>"),
     );
     const concurrentHomes = await Promise.all(
       Array.from({ length: 8 }, () => client()("/")),
@@ -79,7 +79,7 @@ test("DataRuang against real configured SQL and MongoDB servers", async (t) => {
       "Concurrent workspace initialization keeps all counters available",
       concurrentHomes.every(
         (result) =>
-          result.status === 200 && !result.body.includes("<strong>—</strong>"),
+          result.status === 200 && !result.body.includes("<strong>-</strong>"),
       ),
     );
     for (const kind of ["rdbms", "mongodb", "siswa"]) {

@@ -32,7 +32,7 @@ export function validateUser(input, mongo = false) {
   };
   const errors = {};
   if (length(data.name) < 2 || length(data.name) > 100)
-    errors.name = "Nama harus berisi 2–100 karakter.";
+    errors.name = "Nama harus berisi 2-100 karakter.";
   if (data.email.length > 254 || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email))
     errors.email = "Masukkan alamat email yang valid.";
   if (
@@ -40,7 +40,7 @@ export function validateUser(input, mongo = false) {
     Number(data.age) < 1 ||
     Number(data.age) > 120
   )
-    errors.age = "Usia harus berupa bilangan bulat 1–120.";
+    errors.age = "Usia harus berupa bilangan bulat 1-120.";
   if (mongo) {
     data.profileText = text(input, "profile") || "{}";
     try {
@@ -81,7 +81,7 @@ export function validateStudent(input) {
     ["sekolah_asal", 2, 64, "Sekolah asal"],
   ]) {
     if (length(data[key]) < min || length(data[key]) > max)
-      errors[key] = `${label} harus berisi ${min}–${max} karakter.`;
+      errors[key] = `${label} harus berisi ${min}-${max} karakter.`;
   }
   if (!genders.includes(data.jenis_kelamin))
     errors.jenis_kelamin = "Pilih jenis kelamin yang tersedia.";
